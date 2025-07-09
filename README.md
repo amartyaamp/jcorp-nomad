@@ -102,9 +102,9 @@ All software used is free and available on Windows, macOS, and Linux.
 1. Flash the ESP32-S3 with the firmware in the `/firmware/` directory.
 2. Format your SD card as **FAT32** and copy the web files from `/SD_Card_Template/`.
 3. Place your media files into the appropriate folders (see structure below).
-4. Run `media.py` to generate `media.json` automatically.
+4. ~~Run `media.py` to generate `media.json` automatically.~~ Updated: Media.py is still there, but you dont need to run it, file will be generated on boot automaticaly!
 5. Insert the SD card and power the device.
-6. Connect to the Wi-Fi network named `NomadServer`.
+6. Connect to the Wi-Fi network named `Jcorp_Nomad`.
 7. Your browser will be redirected to the offline media interface.
 
 ---
