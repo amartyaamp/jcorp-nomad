@@ -201,6 +201,9 @@ Improve playback for long-form audio by adding bookmarks, chapter display, and s
 ### File Upload Over USB
 Enable USB mass storage or dual-mode operation to allow users to drag and drop files directly to the SD card without removing it. This may require dynamic switching between USB and Wi-Fi server modes, or dual-core task handling. I worked on this for a long while, but couldnt find a relible way to have it switch modes and still function, usualy crashes trying to reboot media, I also wasnt able to get it to run the python script to generate media.json, a new system would be needed.
 
+### DLNA Server Support for Tvs and VLC Media Player. 
+This would give another method for acessing media on the system, Sadly softAP doesnt really let me do DLNA on the ESP32, but I am working on a solution for that. I am not sure if this is actualy possible but if I can get it working yall will know!
+
 ---
 
 ## Build Guide on Instructables
