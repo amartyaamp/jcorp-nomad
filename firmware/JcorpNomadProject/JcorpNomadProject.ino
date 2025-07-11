@@ -22,6 +22,7 @@
 
 // WiFi network name and password (this is the hotspot the ESP32 creates)
 #define WIFI_SSID "Jcorp_Nomad"
+// Password MUST be at least 8 characters, must not be more than 63 characters
 #define WIFI_PASSWORD "password"
 
 // Max number of devices that can connect at once
