@@ -215,6 +215,13 @@ Check out the full build guide on **Instructables** for detailed instructions, p
 
 ---
 
+<p align="center">
+  <img src="NomadVideoDemogif.gif" alt="Nomad Video Demo" width="300" style="vertical-align:middle;"/>
+  <img src="AdminPanelDemo.gif" alt="Admin Panel Demo" width="300" style="vertical-align:middle;"/>
+</p>
+
+---
+
 ## License
 
 This project is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
