@@ -78,6 +78,9 @@ The following links are Amazon affiliate links. Purchasing through these links s
 - **Waveshare ESP32-S3 Dev Board (1.47" LCD version)**  
   [https://amzn.to/4ktB6oT](https://amzn.to/4ktB6oT)
 
+  [Backup, the other one's shiping is like 2 weeks now](https://amzn.to/4kGp7UT)
+  
+
 - **FAT32-formatted microSD card (16 GB minimum recommended, 64 GB preferred)**  
   [https://amzn.to/44tM1c4](https://amzn.to/44tM1c4)
 
