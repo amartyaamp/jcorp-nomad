@@ -42,7 +42,7 @@ jobs:
       - name: Compile Firmware
         run: |
           arduino-cli compile \
-          --fqbn esp32:esp32:esp32s3:CDCOnBoot=cdc,PSRAM=opi \
+          --fqbn esp32:esp32:esp32s3:CDCOnBoot=cdc,PSRAM=opi,PartitionScheme=custom \
           --build-property build.partition_file=firmware/partitions/custom_16MB.csv \
           --libraries ./lib \
           firmware/JcorpNomadProject/JcorpNomadProject.ino
