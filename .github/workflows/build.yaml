@@ -26,6 +26,11 @@ jobs:
           arduino-cli core update-index
           arduino-cli core install esp32:esp32
 
+      - name: Install required libraries
+        run: |
+          arduino-cli lib update-index
+          arduino-cli lib install ESPAsyncWebServer
+
       - name: Compile Firmware
         run: |
           arduino-cli compile --fqbn esp32:esp32:esp32s3 firmware/JcorpNomadProject/JcorpNomadProject.ino
