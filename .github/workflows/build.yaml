@@ -39,15 +39,20 @@ jobs:
       #     mkdir -p lib
       #     mv ESPAsyncWebServer-1.3.0 lib/ESPAsyncWebServer
 
-      - name: Compile Firmware
+      - name: Compile firmware
         run: |
+          mkdir -p firmware/JcorpNomadProject/build
           arduino-cli compile \
-          --fqbn esp32:esp32:esp32s3:CDCOnBoot=cdc,PSRAM=opi,PartitionScheme=huge_app \
-          --libraries ./lib \
-          firmware/JcorpNomadProject/JcorpNomadProject.ino
+            --fqbn esp32:esp32:esp32s3:CDCOnBoot=cdc,PSRAM=opi,PartitionScheme=custom \
+            --build-property build.partition_file=$GITHUB_WORKSPACE/firmware/partitions/custom_16MB.csv \
+            --output-dir $GITHUB_WORKSPACE/firmware/JcorpNomadProject/build \
+            --libraries $GITHUB_WORKSPACE/lib \
+            $GITHUB_WORKSPACE/firmware/JcorpNomadProject/JcorpNomadProject.ino
 
-      - name: Upload Firmware Binary
+      - name: Upload firmware artifact
         uses: actions/upload-artifact@v4
         with:
           name: jcorp-nomad-firmware
-          path: firmware/JcorpNomadProject/build/esp32.esp32s3/firmware.bin
+          path: firmware/JcorpNomadProject/build/JcorpNomadProject.ino.bin
+          if-no-files-found: error
+          compression-level: 6
