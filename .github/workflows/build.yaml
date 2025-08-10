@@ -31,7 +31,8 @@ jobs:
           arduino-cli lib update-index
           arduino-cli lib install ESPAsyncWebServer
           arduino-cli lib install ArduinoJson
-          arduino-cli lib install lvgl
+          arduino-cli lib install lvgl@8.3.10
+          arduino-cli lib install SD@1.3.0
 
       - name: Compile Firmware
         run: |
