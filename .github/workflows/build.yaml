@@ -43,7 +43,9 @@ jobs:
         run: |
           arduino-cli compile \
           --fqbn esp32:esp32:esp32s3:CDCOnBoot=cdc,PSRAM=opi \
-          --build-properties build.partitions=16MFat \
+          --build-property build.partitions=custom \
+          --build-property upload.maximum_size=16777216 \
+          --build-property build.partition_file=firmware/partitions/custom_16MB.csv \
           --libraries ./lib firmware/JcorpNomadProject/JcorpNomadProject.ino
 
       - name: Upload Firmware Binary
