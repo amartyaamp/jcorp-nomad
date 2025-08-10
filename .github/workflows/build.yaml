@@ -42,7 +42,7 @@ jobs:
       - name: Compile Firmware
         run: |
           arduino-cli compile \
-          --fqbn esp32:esp32:esp32s3:USBMode=cdc,PartitionScheme=16MFat,PSRAM=opi \
+          --fqbn esp32:esp32:esp32s3:CDCOnBoot=cdc,PartitionScheme=16MFat,PSRAM=opi \
           --libraries ./lib firmware/JcorpNomadProject/JcorpNomadProject.ino
 
       - name: Upload Firmware Binary
