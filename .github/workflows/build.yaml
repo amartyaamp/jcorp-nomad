@@ -43,7 +43,7 @@ jobs:
         run: |
           mkdir -p firmware/JcorpNomadProject/build
           arduino-cli compile \
-            --fqbn esp32:esp32:esp32s3:CDCOnBoot=cdc,PSRAM=opi,PartitionScheme=default_16MB \
+            --fqbn esp32:esp32:esp32s3:CDCOnBoot=cdc,PSRAM=opi,PartitionScheme=app3M_fat9M_16MB \
             --output-dir $GITHUB_WORKSPACE/firmware/JcorpNomadProject/build \
             --libraries $GITHUB_WORKSPACE/lib \
             $GITHUB_WORKSPACE/firmware/JcorpNomadProject/JcorpNomadProject.ino
