@@ -35,7 +35,7 @@ jobs:
 
       - name: Download ESPAsyncWebServer 1.3.0 and add to local lib
         run: |
-          curl -L https://github.com/esphome/ESPAsyncWebServer/archive/refs/tags/1.3.0.tar.gz | tar -xz
+          curl -L https://github.com/esphome/ESPAsyncWebServer/archive/refs/tags/v1.3.0.tar.gz | tar -xz
           mv ESPAsyncWebServer-1.3.0 lib/ESPAsyncWebServer
 
       - name: Compile Firmware
