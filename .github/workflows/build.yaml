@@ -15,8 +15,9 @@ jobs:
       
       - name: Install Arduino CLI
         run: |
-          sudo apt update
-          sudo apt install -y arduino-cli
+          mkdir -p $HOME/bin
+          curl -fsSL https://github.com/arduino/arduino-cli/releases/latest/download/arduino-cli_Linux_64bit.tar.gz | tar -xz -C $HOME/bin
+          echo "$HOME/bin" >> $GITHUB_PATH
       
       - name: Verify Arduino CLI version
         run: arduino-cli version
@@ -49,12 +50,12 @@ jobs:
             $GITHUB_WORKSPACE/firmware/JcorpNomadProject/JcorpNomadProject.ino
 
       - name: Upload firmware artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: jcorp-nomad-firmware
-          path: |
-            firmware/JcorpNomadProject/build/JcorpNomadProject.ino.bin
-            firmware/JcorpNomadProject/build/JcorpNomadProject.ino.bootloader.bin
-            firmware/JcorpNomadProject/build/JcorpNomadProject.ino.partitions.bin
-          if-no-files-found: error
-          compression-level: 6
+  uses: actions/upload-artifact@v4
+  with:
+    name: jcorp-nomad-firmware
+    path: |
+      firmware/JcorpNomadProject/build/JcorpNomadProject.ino.bin
+      firmware/JcorpNomadProject/build/JcorpNomadProject.ino.bootloader.bin
+      firmware/JcorpNomadProject/build/JcorpNomadProject.ino.partitions.bin
+    if-no-files-found: error
+    compression-level: 6
