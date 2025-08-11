@@ -50,12 +50,12 @@ jobs:
             $GITHUB_WORKSPACE/firmware/JcorpNomadProject/JcorpNomadProject.ino
 
       - name: Upload firmware artifacts
-  uses: actions/upload-artifact@v4
-  with:
-    name: jcorp-nomad-firmware
-    path: |
-      firmware/JcorpNomadProject/build/JcorpNomadProject.ino.bin
-      firmware/JcorpNomadProject/build/JcorpNomadProject.ino.bootloader.bin
-      firmware/JcorpNomadProject/build/JcorpNomadProject.ino.partitions.bin
-    if-no-files-found: error
-    compression-level: 6
+        uses: actions/upload-artifact@v4
+        with:
+          name: jcorp-nomad-firmware
+          path: |
+            firmware/JcorpNomadProject/build/JcorpNomadProject.ino.bin
+            firmware/JcorpNomadProject/build/JcorpNomadProject.ino.bootloader.bin
+            firmware/JcorpNomadProject/build/JcorpNomadProject.ino.partitions.bin
+          if-no-files-found: error
+          compression-level: 6
