@@ -44,15 +44,17 @@ jobs:
           mkdir -p firmware/JcorpNomadProject/build
           arduino-cli compile \
             --fqbn esp32:esp32:esp32s3:PSRAM=opi,CDCOnBoot=cdc,PartitionScheme=app3M_fat9M_16MB \
-            --build-property build.panic=print \
             --output-dir $GITHUB_WORKSPACE/firmware/JcorpNomadProject/build \
             --libraries $GITHUB_WORKSPACE/lib \
             $GITHUB_WORKSPACE/firmware/JcorpNomadProject/JcorpNomadProject.ino
 
-      - name: Upload firmware artifact
+      - name: Upload firmware artifacts
         uses: actions/upload-artifact@v4
         with:
           name: jcorp-nomad-firmware
-          path: firmware/JcorpNomadProject/build/JcorpNomadProject.ino.bin
+          path: |
+            firmware/JcorpNomadProject/build/JcorpNomadProject.ino.bin
+            firmware/JcorpNomadProject/build/JcorpNomadProject.ino.bootloader.bin
+            firmware/JcorpNomadProject/build/JcorpNomadProject.ino.partitions.bin
           if-no-files-found: error
           compression-level: 6
